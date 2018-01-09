@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function show(){
+	
+	alert("hi");
+	
+		var parameters = location.search.substring(1).split('&');
+		alert(parameters);
+		 for(var i=0;i<parameters.length;i++){
+		    var temp = parameters[i].split('=');
+		    for(var i=0;i<temp.length;i++){
+		   alert(temp[i]);}
+		}
+		 
+	}
+	  
+</script>
+</head>
+<body onload=show()>
+
+</body>
+</html>

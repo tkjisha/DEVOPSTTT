@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>TRANSACTION</title>
+</head>
+<body>
+<script type="text/javascript">
+	function calc(){
+		
+		var tid=document.getElementById("tid").value;
+		var pname=document.getElementById("pname").value;
+		var price=document.getElementById("price").value;
+		var pqty=document.getElementById("pqty").value;
+		var cname=document.getElementById("cname").value;
+		var cgender=document.getElementById("cgender").value;
+		var dob=document.getElementById("dob").value;
+		var city=document.getElementById("city").value;
+		var state=document.getElementById("state").value;
+		var country=document.getElementById("country").value;
+		
+		if(tid=="" || pname==""|| price==""|| pqty==""|| cname==""|| cgender==""|| city==""|| state==""|| country=="" )
+			{
+			alert("Please enter all the Fields");
+			}
+		else{
+			var totprice=price*pqty;
+			//alert(totprice);
+			if(totprice>10000 && country=="india"){
+				var discprice=totprice-totprice/10;
+		//		alert(discprice);
+				var value=cname+pname+totprice+discprice;
+				var url ="Display.html?"+ encodeURIComponent("cname") + "=" + encodeURIComponent(cname) + '&' + encodeURIComponent("pname") + "=" + encodeURIComponent(pname)+ '&' + encodeURIComponent("Total") + "=" + encodeURIComponent(totprice)+ '&' + encodeURIComponent("TotalPrice") + "=" + encodeURIComponent(discprice);
+										
+				window.location.href = url ;
+			}
+		}
+		
+	}
+</script>
+<div align="center"> TRANSACTION </div><BR><BR>
+<table align="center">
+	<tr><td>Transaction ID </td><td><input type="text" id="tid" name="tid"></td></tr>
+	<tr><td>Product Name</td><td><input type="text" id="pname" name="pname"></td></tr>
+	<tr><td>Product Price</td><td><input type="text" id="price" name="price"></td></tr>
+	<tr><td>Product Quantity</td><td><input type="text" id="pqty" name="pqty"></td></tr>
+	<tr><td>Customer Name</td><td><input type="text" id="cname" name="cname"></td></tr>
+	<tr><td>Customer Gender</td><td><input type="text" id="cgender" name="cgender"></td></tr>
+	<tr><td>Customer DOB</td><td><input type="text" id="dob" name="dob"></td></tr>
+	<tr><td>Customer City</td><td><input type="text" id="city" name="city"></td></tr>
+	<tr><td>Customer State</td><td><input type="text" id="state" name="state"></td></tr>
+	<tr><td>Customer Country</td><td><input type="text" id="country" name="country"></td></tr>
+	<tr><td><input type="submit" value="Submit" onclick=calc()></td><td></td><tr>
+	</table>
+</body>
+</html>
