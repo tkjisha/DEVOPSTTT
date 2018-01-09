@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ProductDisplay</title>
+<script type="text/javascript">
+function show(){
+	var idx = document.URL.indexOf('?');
+	var params = new Array();
+	if (idx != -1) {
+	var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+	for (var i=0; i<pairs.length; i++){
+	nameVal = pairs[i].split('=');
+	params[nameVal[0]] = nameVal[1];
+	}
+	}
+	return params;
+	}
+params = show();
+prid = unescape(params["pid"]);
+prname = unescape(params["pname"]);
+price = unescape(params["price"]);
+prqty = unescape(params["pqty"]);
+
+document.write("Product ID = " + prid + "<br>");
+document.write("Product Name = " + prname + "<br>");
+document.write("Price = " + price + "<br>");
+document.write("Product Quantity = " + prqty + "<br>");
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

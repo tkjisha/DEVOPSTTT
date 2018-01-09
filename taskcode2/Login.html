@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LOGIN</title>
+
+</head>
+<body>
+<script type="text/javascript">
+	function check()
+	{
+		var name=document.getElementById("uname").value;
+		var pass=document.getElementById("pass").value;
+		
+		if(name=="" || pass==""){
+			alert("Please enter the details");
+		}
+		if(name=="admin" && pass=="123"){
+			
+			window.location.href = "Product.html" ;
+		}
+	}
+</script>
+    <P><center><h1> LOGIN</h1></center> </P><br><br>
+	USERNAME &nbsp; <input type="text" name="uname" id="uname"><br><br>
+	PASSWORD &nbsp; <input type="password" name="pass" id="pass"><br><br>
+	<input type="submit" value="Login" onclick=check()>
+</body>
+</html>
